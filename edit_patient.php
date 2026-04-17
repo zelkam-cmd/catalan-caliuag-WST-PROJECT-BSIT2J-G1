@@ -15,15 +15,8 @@ $row = $result->fetch_assoc();
     <style>body { font-family: 'Outfit', sans-serif; }</style>
 </head>
 <body class="bg-[#f8fafc] min-h-screen flex flex-col">
-    <nav class="bg-white border-b p-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="bg-blue-600 p-2 rounded-lg text-white font-bold">🩺</div>
-                <h1 class="text-xl font-bold">BrightSmile</h1>
-            </div>
-            <a href="index.php" class="text-blue-600 font-bold hover:underline">← Back to Database</a>
-        </div>
-    </nav>
+    <?php include 'db_config.php'; ?>
+    <?php include 'header.php'; ?>
 
     <main class="flex-grow flex items-center justify-center py-12 px-6">
         <div class="max-w-xl w-full bg-white p-10 rounded-[2.5rem] shadow-2xl border border-blue-50">

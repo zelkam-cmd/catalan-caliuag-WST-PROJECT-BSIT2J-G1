@@ -10,18 +10,8 @@
     <style>body { font-family: 'Outfit', sans-serif; }</style>
 </head>
 <body class="bg-[#f8fafc] min-h-screen flex flex-col">
-    <nav class="bg-white border-b p-6 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="bg-blue-600 p-2 rounded-lg text-white">🩺</div>
-                <h1 class="text-xl font-bold">BrightSmile</h1>
-            </div>
-            <div class="space-x-6 font-medium">
-                <a href="index.php" class="text-slate-500 hover:text-blue-600">Home</a>
-                <a href="add.php" class="text-slate-500 hover:text-blue-600">Add Patient</a>
-            </div>
-        </div>
-    </nav>
+    <?php include 'db_config.php'; ?>
+    <?php include 'header.php'; ?>
 
     <main class="max-w-7xl mx-auto w-full px-6 py-12 flex-grow">
         <div class="flex justify-between items-end mb-8">

@@ -21,37 +21,8 @@
     <style>body { font-family: 'Outfit', sans-serif; }</style>
 </head>
 <body class="bg-dental-50 min-h-screen flex flex-col">
-    <nav class="bg-white border-b border-blue-50 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-                <i data-lucide="stethoscope" class="w-6 h-6"></i>
-            </div>
-            <div>
-                <h1 class="text-xl font-bold text-slate-900 leading-none">BrightSmile</h1>
-                <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mt-1">Dental Clinic</p>
-            </div>
-        </div>
-
-        <div class="flex items-center space-x-2">
-            <a href="index.php" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all bg-blue-50 text-blue-600">
-                <i data-lucide="home" class="w-4 h-4"></i>
-                Home
-            </a>
-
-            <a href="add.php" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-blue-600 hover:bg-blue-50/50">
-                <i data-lucide="plus" class="w-4 h-4"></i>
-                Add Patient
-            </a>
-
-            <a href="view_patients.php" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-blue-600 hover:bg-blue-50/50">
-                <i data-lucide="users" class="w-4 h-4"></i>
-                View Patients
-            </a>
-        </div>
-    </div>
-</nav>
-
+    <?php include 'db_config.php'; ?>
+    <?php include 'header.php'; ?>
 <script>
     lucide.createIcons();
 </script>
