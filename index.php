@@ -38,10 +38,10 @@
                 <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold">WELCOME TO BRIGHTSMILE</span>
                 <h2 class="text-6xl font-bold mt-4 mb-6 leading-tight">Modern Dental Care <br><span class="text-dental-600">for Your Family</span></h2>
                 <div class="flex gap-4">
-                    <a href="#add-form" class="bg-dental-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-dental-700 transition">
+                    <a href="#add.php" class="bg-dental-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-dental-700 transition">
                         + Register New Patient
                     </a>
-                    <a href="#database" class="bg-white text-dental-700 border border-blue-100 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition">
+                    <a href="#view_patients.php" class="bg-white text-dental-700 border border-blue-100 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition">
                         Manage Database
                     </a>
                 </div>
@@ -100,5 +100,6 @@
             </table>
         </div>
     </main>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
