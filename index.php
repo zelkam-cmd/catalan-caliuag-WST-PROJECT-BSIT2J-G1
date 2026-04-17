@@ -1,13 +1,42 @@
+<?php include 'db_config.php'; ?>
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <title>BrightSmile Dental Clinic</title>
+    <link rel="stylesheet" href="src/index.css"> </head>
+<body>
+    <h1>BrightSmile Patient Management</h1>
 
+    <form action="add_patient.php" method="POST">
+        <input type="text" name="name" placeholder="Patient Name" required>
+        <input type="text" name="service" placeholder="Service (e.g. Cleaning)">
+        <button type="submit">Add Patient</button>
+    </form>
+
+    <h2>Patient List</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Service</th>
+        </tr>
+        <?php
+        $sql = "SELECT * FROM patients";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>".$row["id"]."</td>
+                        <td>".$row["name"]."</td>
+                        <td>".$row["service"]."</td>
+                      </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='3'>No patients found</td></tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>
