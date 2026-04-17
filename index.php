@@ -27,12 +27,16 @@
 
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>".$row["id"]."</td>
-                        <td>".$row["name"]."</td>
-                        <td>".$row["service"]."</td>
-                      </tr>";
-            }
+            echo "<tr>
+                <td>".$row["id"]."</td>
+                <td>".$row["name"]."</td>
+                <td>".$row["service"]."</td>
+                <td>
+                    <a href='edit_patient.php?id=".$row["id"]."'>Edit</a> | 
+                    <a href='delete_patient.php?id=".$row["id"]."' onclick='return confirm(\"Are you sure?\")'>Delete</a>
+                </td>
+            </tr>";
+          }
         } else {
             echo "<tr><td colspan='3'>No patients found</td></tr>";
         }
