@@ -1,4 +1,8 @@
 <footer class="bg-white border-t border-blue-100 py-12 mt-20">
+    <style>
+    /* This forces the footer to the bottom of the viewport */
+    footer { margin-top: auto; }
+    </style>
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">🩺</div>
