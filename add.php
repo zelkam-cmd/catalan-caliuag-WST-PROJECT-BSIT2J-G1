@@ -3,39 +3,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register Patient - BrightSmile</title>
+    <title>Register - BrightSmile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Outfit', sans-serif; }</style>
 </head>
-<body class="bg-[#f8fafc] min-h-screen flex flex-col font-[Outfit]">
-    <nav class="bg-white border-b p-6">
+<body class="bg-[#f0f9ff] min-h-screen flex flex-col">
+    <nav class="bg-white border-b p-6 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="font-bold text-xl">BrightSmile</h1>
-            <a href="index.php" class="text-blue-600 font-bold hover:underline">← Back to Home</a>
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 p-2 rounded-lg text-white font-bold">🩺</div>
+                <h1 class="text-xl font-bold">BrightSmile</h1>
+            </div>
+            <div class="space-x-8 font-medium">
+                <a href="index.php" class="text-slate-500 hover:text-blue-600">Home</a>
+                <a href="view_patients.php" class="text-slate-500 hover:text-blue-600">Database</a>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow flex items-center justify-center py-12">
-        <div class="max-w-2xl w-full bg-white rounded-[2.5rem] shadow-2xl border border-blue-50 overflow-hidden">
-            <div class="bg-blue-600 p-8 text-white">
+    <main class="flex-grow flex items-center justify-center py-12 px-6">
+        <div class="max-w-2xl w-full bg-white rounded-[2.5rem] shadow-2xl border border-blue-100 overflow-hidden">
+            <div class="bg-[#0284c7] p-8 text-white">
                 <h3 class="text-2xl font-bold">Register New Patient</h3>
-                <p class="opacity-80">Fill in the clinical details below.</p>
+                <p class="opacity-80">Please fill in the patient information accurately.</p>
             </div>
-            <form action="add_patient.php" method="POST" class="p-8 grid grid-cols-2 gap-6">
-                <div class="col-span-2 md:col-span-1">
-                    <label class="block text-sm font-bold mb-2">Full Name</label>
-                    <input type="text" name="name" placeholder="Juan Dela Cruz" class="w-full p-4 bg-slate-50 border rounded-2xl" required>
+            
+            <form action="add_patient.php" method="POST" class="p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">👤 Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">📅 Age</label>
+                        <input type="number" name="age" placeholder="25" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Gender</label>
+                        <select name="gender" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">📞 Contact Number</label>
+                        <input type="text" name="contact" placeholder="9123456789" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Appointment Date</label>
+                        <input type="date" name="appointment_date" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">🩺 Treatment</label>
+                        <input type="text" name="service" placeholder="Cleaning" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    </div>
                 </div>
-                <div class="col-span-2 md:col-span-1">
-                    <label class="block text-sm font-bold mb-2">Age</label>
-                    <input type="number" name="age" placeholder="20" class="w-full p-4 bg-slate-50 border rounded-2xl" required>
+
+                <div class="flex gap-4 pt-4">
+                    <button type="submit" class="flex-grow bg-[#0284c7] text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition">Register Patient</button>
+                    <a href="index.php" class="px-8 py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center">Cancel</a>
                 </div>
-                <div class="col-span-2">
-                    <label class="block text-sm font-bold mb-2">Treatment/Service</label>
-                    <input type="text" name="service" placeholder="Cleaning, Braces, etc." class="w-full p-4 bg-slate-50 border rounded-2xl" required>
-                </div>
-                <button type="submit" class="col-span-2 bg-blue-600 text-white py-5 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition">Register Patient</button>
             </form>
         </div>
     </main>
