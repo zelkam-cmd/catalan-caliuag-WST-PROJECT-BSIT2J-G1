@@ -51,50 +51,49 @@
                     </a>
                 </div>
 
-                <div class="grid grid-cols-3 gap-8 pt-10 border-t border-blue-100">
+              <div class="grid grid-cols-3 gap-8 pt-10 border-t border-blue-100">
                   <?php
-                  $count_query = "SELECT COUNT(id) as total FROM patients";
-                  $count_result = $conn->query($count_query);
-                  $count_row = $count_result->fetch_assoc();
-                  $total_patients = $count_row['total'];
+                  $count_res = $conn->query("SELECT COUNT(id) as total FROM patients");
+                  $total_p = $count_res->fetch_assoc()['total'];
+
+                  $treat_res = $conn->query("SELECT COUNT(DISTINCT service) as total_s FROM patients");
+                  $total_s = $treat_res->fetch_assoc()['total_s'];
                   ?>
-                  
                   <div>
-                      <p class="text-3xl font-bold text-slate-900"><?php echo $total_patients; ?></p>
-                      <p class="text-sm text-slate-500 font-medium">Active Patients</p>
+                      <p class="text-3xl font-bold text-slate-900"><?php echo $total_p; ?></p>
+                      <p class="text-sm text-slate-500 font-medium">Patients</p>
                   </div>
-                  
-                  <?php
-                  $service_query = "SELECT COUNT(DISTINCT service) as total_services FROM patients";
-                  $service_result = $conn->query($service_query);
-                  $service_row = $service_result->fetch_assoc();
-                  $total_services = $service_row['total_services'];
-                  ?>
-                  
                   <div>
-                      <p class="text-3xl font-bold text-slate-900"><?php echo $total_services; ?></p>
-                      <p class="text-sm text-slate-500 font-medium">Treatments Run</p>
+                      <p class="text-3xl font-bold text-slate-900"><?php echo $total_s; ?>+</p>
+                      <p class="text-sm text-slate-500 font-medium">Treatments</p>
                   </div>
-                  
                   <div>
                       <p class="text-3xl font-bold text-slate-900">4.9/5</p>
-                      <p class="text-sm text-slate-500 font-medium">User Rating</p>
+                      <p class="text-sm text-slate-500 font-medium">Rating</p>
                   </div>
               </div>
-            </div>
 
-            <div class="relative">
-                <div class="absolute -inset-4 bg-blue-200/30 blur-3xl rounded-full"></div>
-                <img src="https://picsum.photos/seed/dentist/800/800" alt="Clinic" class="relative rounded-[3rem] shadow-2xl object-cover aspect-square">
-                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl border border-blue-50 hidden md:block">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 text-xl">📅</div>
-                        <div>
-                            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Next Appointment</p>
-                            <p class="font-bold text-slate-900">Today, 2:30 PM</p>
-                        </div>
-                    </div>
-                </div>
+              <div class="relative">
+                  <img src="https://picsum.photos/seed/dentist/800/800" class="rounded-[3rem] shadow-2xl">
+                  
+                  <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl border border-blue-50">
+                      <div class="flex items-center gap-4 mb-4">
+                          <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 text-xl">
+                              <i class="fa-regular fa-calendar-check"></i>
+                          </div>
+                          <div>
+                              <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Next Appointment</p>
+                              <p class="font-bold text-slate-900">Today, 2:30 PM</p>
+                          </div>
+                      </div>
+                      <div class="flex -space-x-2">
+                          <img src="https://i.pravatar.cc/100?u=1" class="w-8 h-8 rounded-full border-2 border-white">
+                          <img src="https://i.pravatar.cc/100?u=2" class="w-8 h-8 rounded-full border-2 border-white">
+                          <img src="https://i.pravatar.cc/100?u=3" class="w-8 h-8 rounded-full border-2 border-white">
+                          <div class="w-8 h-8 rounded-full bg-blue-50 border-2 border-white flex items-center justify-center text-[10px] font-bold text-blue-600">+12</div>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </main>
