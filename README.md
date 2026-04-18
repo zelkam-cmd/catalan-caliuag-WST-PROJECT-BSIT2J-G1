@@ -9,6 +9,7 @@ A modern, responsive Clinical Management System built with **PHP** and **MySQL**
 
 🎥 Project Demo
 https://github.com/user-attachments/assets/deb0f739-5024-40a7-b6e3-5409f689dd4c
+(paki click nalang 'to sir for a mp4 sample :)
 
 🛠️ Tech Stack
 * **Frontend**: HTML5, Tailwind CSS, Font Awesome, Animate.css
